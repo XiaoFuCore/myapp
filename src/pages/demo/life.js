@@ -1,6 +1,9 @@
 import React from "react";
+import Child from "./child";
+import "../../styles/index.less";
 
-import Child from './child'
+import {Button} from 'antd'
+// import 'antd/dist/antd.css';
 
 export default class Life extends React.Component {
   constructor(props) {
@@ -36,12 +39,13 @@ export default class Life extends React.Component {
 
     return (
       <div style={style}>
-        <h3>React</h3>
-        <button onClick={this.handleAdd}>递增</button>
-        <button onClick={this.handleClick.bind(this)}>递减</button>
-        <p>This is react life</p>
+        <div className="color">yellow</div>
+        <h3>React-函数调用注意 </h3>
+        <Button onClick={this.handleAdd}> 递增 </Button>
+        <Button onClick={this.handleClick.bind(this)}> 递减 </Button>
+        <p> This is react life </p>
         <p>{this.state.count}</p>
-        <Child name='XiaoFu' sex='man' count={this.state.count}></Child>
+        <Child name="XiaoFu" sex="man" count={this.state.count} />
       </div>
     );
   }
