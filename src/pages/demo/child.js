@@ -4,7 +4,7 @@ export default class Child extends React.Component {
   constructor(props) {
     super(props);
   }
-
+// 生命周期
   componentWillMount() {
     console.log("will mount");
   }
