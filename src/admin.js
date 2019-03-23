@@ -1,6 +1,6 @@
 import React from 'react'
 import {Row,Col} from 'antd'
-import {Header, Footer} from './components'
+import {Header, Footer,NavLeft} from './components'
 import './styles/common.less';
 
 export default class Admin extends React.Component{
@@ -11,8 +11,10 @@ export default class Admin extends React.Component{
         return(
           
                 <Row className='container'>
-                    <Col  span={3}  className='nav-left'>left</Col>
-                    <Col  span={21} className='main'>
+                    <Col  span={4}  className='nav-left'>
+                      <NavLeft></NavLeft>
+                    </Col>
+                    <Col  span={20} className='main'>
                         <Header>header</Header>
                         <Row className='content'>
                             {/* {this.props.children} */}
