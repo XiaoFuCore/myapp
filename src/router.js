@@ -18,8 +18,10 @@ export default class AppRouter extends React.Component {
                         <Route path='/login' component={Login} />
                         <Route path='/admin' render={() =>
                             <Admin>
+                            <Switch>
                              <Route path='/admin/home' component={Home} />
                              <Route  component={NoMatch} />
+                             </Switch>
                             </Admin>
                         } />
                     </Switch>

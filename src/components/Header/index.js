@@ -1,10 +1,12 @@
 import React from 'react'
 import { Row, Col } from 'antd'
 
+import { connect } from 'react-redux'
+
 import Util from '@/utils/utils'
 import './index.less'
 
-export default class Header extends React.Component {
+class Header extends React.Component {
 
     state = {}
 
@@ -31,7 +33,9 @@ export default class Header extends React.Component {
                     </Col>
                 </Row>
                 <Row className='breadcrumb'>
-                    <Col span={4}  className='breadcrumb-title'>首页</Col>
+                    <Col span={4} className='breadcrumb-title'>
+                        {this.props.menuName || '首页'}
+                    </Col>
                     <Col span={20} className='breadcrumb-weather'>
                         <span> {this.state.sysTime}  </span>
                         <span>🌤</span>
@@ -45,3 +49,10 @@ export default class Header extends React.Component {
 
 
 }
+
+const mapStateToProps = state => {
+    return {
+        menuName: state.menuName
+    }
+};
+export default connect(mapStateToProps)(Header)
